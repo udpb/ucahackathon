@@ -1,0 +1,1689 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Hackathon for International Students with AI · 외국인 유학생을 위한 AI 해커톤 · Jun 6–7, 2026</title>
+<meta name="description" content="2-country edge × AI × Korean startup visa. 2 days in Seoul (Sat 13:00 → Sun 13:00, no overnight stay). Hosted by underdogs × UD IMPACT. 두 시장 이해도와 AI로 만들고, OASIS 창업비자까지.">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,300;0,400;0,500;0,600;0,700;1,700&amp;display=swap" rel="stylesheet">
+<style>
+:root {
+  --action-orange: #FF8204;
+  --orange2: #FFA40D;
+  --orange3: #F05519;
+  --primary-orange: #E8541A;
+  --light-orange: #F0845A;
+  --dark-charcoal: #373938;
+  --dark2: #2D2D2D;
+  --dark3: #1F2020;
+  --warm-gray: #D8D4D7;
+  --cyan: #06A9D0;
+  --light-beige: #F5F0EB;
+  --white: #FFFFFF;
+  --body-text: #333333;
+  --subtitle-text: #666666;
+  --green: #2ECC71;
+}
+
+* { margin: 0; padding: 0; box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+body {
+  font-family: 'Poppins', sans-serif;
+  color: var(--body-text);
+  background: var(--white);
+  line-height: 1.7;
+  -webkit-font-smoothing: antialiased;
+  overflow-x: hidden;
+}
+
+/* ── Navigation ── */
+.nav {
+  position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+  padding: 16px 32px;
+  display: flex; align-items: center; justify-content: space-between;
+  transition: all 0.3s ease;
+}
+.nav.scrolled {
+  background: rgba(55, 57, 56, 0.95);
+  backdrop-filter: blur(12px);
+  border-bottom: 1px solid rgba(255,130,4,0.15);
+  padding: 10px 32px;
+}
+.nav-brand { display: flex; align-items: center; gap: 12px; }
+.nav-logo {
+  font-weight: 700; font-style: italic; font-size: 20px;
+  color: var(--white); letter-spacing: -0.5px;
+}
+.nav-badge {
+  font-size: 10px; font-weight: 600;
+  color: var(--action-orange); letter-spacing: 1.5px;
+  padding: 3px 10px; border: 1px solid var(--action-orange);
+}
+.nav-links { display: flex; align-items: center; gap: 26px; }
+.nav-links a {
+  font-size: 13px; font-weight: 500;
+  color: rgba(255,255,255,0.75); text-decoration: none;
+  transition: color 0.2s;
+}
+.nav-links a:hover { color: var(--action-orange); }
+.nav-cta {
+  font-size: 13px; font-weight: 700;
+  color: var(--white); background: var(--primary-orange);
+  padding: 11px 24px; text-decoration: none;
+  transition: background 0.2s;
+  letter-spacing: 0.3px;
+}
+.nav-cta:hover { background: var(--orange3); }
+.schedule-accommodation-note {
+  font-family: 'Poppins', sans-serif;
+  font-size: 11px;
+  font-weight: 500;
+  letter-spacing: 0.8px;
+  color: var(--subtitle-text);
+  margin: -8px 0 0 0;
+  opacity: 0.7;
+  text-transform: uppercase;
+}
+.nav-company-link {
+  font-size: 11px !important;
+  font-weight: 600 !important;
+  letter-spacing: 0.5px;
+  color: var(--action-orange) !important;
+  border: 1px solid var(--action-orange);
+  padding: 5px 10px;
+  border-radius: 2px;
+  transition: all 0.2s;
+  white-space: nowrap;
+}
+.nav-company-link:hover {
+  color: #fff !important;
+  background: var(--action-orange);
+  border-color: var(--action-orange) !important;
+}
+@media (max-width: 900px) { .nav-links > a { display: none; } }
+
+/* ── HERO ── */
+.hero {
+  background: var(--dark-charcoal);
+  min-height: 100vh;
+  display: flex; align-items: center;
+  position: relative; overflow: hidden;
+  padding: 120px 32px 60px;
+}
+.hero::before {
+  content: ''; position: absolute; top: 0; right: 0;
+  width: 55%; height: 100%;
+  background: linear-gradient(135deg, transparent 40%, rgba(232,84,26,0.10) 100%);
+  pointer-events: none;
+}
+.hero-quote-mark {
+  position: absolute; right: -80px; bottom: -80px;
+  font-size: 600px; font-weight: 700; font-style: italic;
+  color: var(--primary-orange); opacity: 0.06;
+  font-family: 'Poppins', sans-serif; line-height: 1;
+  pointer-events: none;
+}
+.hero-accent-1 {
+  position: absolute; bottom: 0; left: 8%; width: 320px; height: 3px;
+  background: var(--action-orange); opacity: 0.4;
+}
+.hero-accent-2 {
+  position: absolute; top: 18%; right: 6%; width: 2px; height: 180px;
+  background: var(--action-orange); opacity: 0.25;
+}
+.hero-inner {
+  max-width: 1200px; margin: 0 auto; width: 100%;
+  position: relative; z-index: 2;
+}
+.hero-badge {
+  display: inline-block;
+  font-size: 11px; font-weight: 600;
+  color: var(--action-orange); letter-spacing: 2px; text-transform: uppercase;
+  border: 1px solid rgba(255,130,4,0.3);
+  padding: 6px 16px; margin-bottom: 28px;
+  animation: fadeInUp 0.6s ease both;
+}
+.hero h1 {
+  font-size: clamp(40px, 6.5vw, 84px); font-weight: 700;
+  color: var(--white); line-height: 1.04;
+  letter-spacing: -2px; margin-bottom: 4px;
+}
+.hero h1 span { color: var(--action-orange); }
+.hero h1:nth-of-type(1) { animation: fadeInUp 0.7s 0.1s ease both; }
+.hero h1:nth-of-type(2) { animation: fadeInUp 0.7s 0.2s ease both; }
+.hero h1:nth-of-type(3) { animation: fadeInUp 0.7s 0.3s ease both; }
+
+.hero-h1-ko {
+  font-size: clamp(16px, 2vw, 22px); font-weight: 500;
+  color: rgba(255,255,255,0.75);
+  margin-top: 22px;
+  letter-spacing: -0.3px;
+  animation: fadeInUp 0.7s 0.35s ease both;
+}
+.hero-subtitle {
+  font-size: clamp(15px, 1.6vw, 17px); font-weight: 400;
+  color: var(--warm-gray); max-width: 720px;
+  line-height: 1.7; margin-top: 18px;
+  animation: fadeInUp 0.7s 0.4s ease both;
+}
+.hero-subtitle-ko {
+  font-size: clamp(13px, 1.4vw, 14px); font-weight: 400;
+  color: rgba(216,212,215,0.5); max-width: 720px;
+  line-height: 1.7; margin-top: 4px;
+  animation: fadeInUp 0.7s 0.45s ease both;
+}
+.hero-ctas {
+  display: flex; gap: 16px; flex-wrap: wrap; align-items: center;
+  margin-top: 40px;
+  animation: fadeInUp 0.7s 0.5s ease both;
+}
+.btn-primary {
+  font-size: 16px; font-weight: 700;
+  color: var(--white); background: var(--primary-orange);
+  padding: 18px 44px; text-decoration: none;
+  transition: all 0.3s;
+  display: inline-flex; align-items: center; gap: 10px;
+  letter-spacing: 0.3px;
+}
+.btn-primary:hover {
+  background: var(--orange3); transform: translateY(-2px);
+  box-shadow: 0 8px 24px rgba(232,84,26,0.3);
+}
+.btn-secondary {
+  font-size: 14px; font-weight: 500;
+  color: var(--warm-gray); background: transparent;
+  padding: 16px 28px; text-decoration: none;
+  border: 1px solid rgba(216,212,215,0.3);
+  transition: all 0.3s;
+  display: inline-block;
+}
+.btn-secondary:hover {
+  border-color: var(--action-orange); color: var(--action-orange);
+}
+.hero-cta-note {
+  font-size: 12px; color: rgba(216,212,215,0.55);
+  letter-spacing: 0.3px;
+}
+.hero-cta-note strong { color: var(--action-orange); font-weight: 700; }
+
+.hero-stats {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  gap: 32px; margin-top: 64px;
+  padding-top: 36px;
+  border-top: 1px solid rgba(255,255,255,0.08);
+  animation: fadeInUp 0.7s 0.65s ease both;
+}
+.hero-stat-num {
+  font-size: 22px; font-weight: 700;
+  color: var(--action-orange); line-height: 1.15;
+  letter-spacing: -0.3px;
+}
+.hero-stat-label {
+  font-size: 11px; color: #999; margin-top: 8px;
+  letter-spacing: 1px; text-transform: uppercase;
+}
+.hero-stat-label-ko {
+  font-size: 11px; color: #666; margin-top: 3px;
+}
+
+@keyframes fadeInUp {
+  from { opacity: 0; transform: translateY(32px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* ── Section Common ── */
+section { padding: 96px 32px; position: relative; }
+.container { max-width: 1200px; margin: 0 auto; }
+
+.section-header { margin-bottom: 48px; }
+.section-label {
+  display: flex; align-items: center; gap: 10px;
+  font-size: 11px; font-weight: 600;
+  color: var(--primary-orange); letter-spacing: 2px; text-transform: uppercase;
+  margin-bottom: 14px;
+}
+.section-label::before {
+  content: ''; width: 10px; height: 10px; border-radius: 50%;
+  background: var(--primary-orange); flex-shrink: 0;
+}
+.section-header h2 {
+  font-size: clamp(28px, 4.2vw, 42px); font-weight: 700;
+  color: var(--dark-charcoal); line-height: 1.2;
+  letter-spacing: -1px; margin-bottom: 8px;
+}
+.section-header h3 {
+  font-size: clamp(14px, 1.8vw, 17px); font-weight: 500;
+  color: var(--subtitle-text); margin-bottom: 16px;
+}
+.section-header-divider {
+  width: 60px; height: 3px; background: var(--primary-orange);
+  margin-bottom: 20px;
+}
+.section-header p {
+  font-size: 15px; color: var(--body-text);
+  line-height: 1.75; max-width: 720px;
+}
+.section-header p.ko {
+  font-size: 13px; color: var(--subtitle-text);
+  margin-top: 6px;
+}
+
+section.dark { background: var(--dark-charcoal); }
+section.dark .section-header h2 { color: var(--white); }
+section.dark .section-header h3 { color: #999; }
+section.dark .section-header p { color: var(--warm-gray); }
+section.dark .section-header p.ko { color: #999; }
+section.dark .section-label { color: var(--action-orange); }
+section.dark .section-label::before { background: var(--action-orange); }
+section.beige { background: var(--light-beige); }
+
+/* ── Card Common ── */
+.card-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 2px;
+}
+.card {
+  background: var(--white);
+  padding: 36px 28px;
+  border-top: 4px solid var(--primary-orange);
+  transition: transform 0.3s;
+}
+.card:hover { transform: translateY(-4px); }
+
+/* ── 3 PILLARS ── */
+.pillars-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2px;
+}
+@media (max-width: 800px) { .pillars-grid { grid-template-columns: 1fr; } }
+.pillar-card {
+  background: var(--white);
+  padding: 40px 32px;
+  border-top: 4px solid;
+  position: relative;
+}
+.pillar-card:nth-child(1) { border-top-color: var(--primary-orange); }
+.pillar-card:nth-child(2) { border-top-color: var(--cyan); }
+.pillar-card:nth-child(3) { border-top-color: var(--green); }
+.pillar-num {
+  font-size: 11px; font-weight: 700;
+  letter-spacing: 1.5px; margin-bottom: 18px;
+}
+.pillar-card:nth-child(1) .pillar-num { color: var(--primary-orange); }
+.pillar-card:nth-child(2) .pillar-num { color: var(--cyan); }
+.pillar-card:nth-child(3) .pillar-num { color: var(--green); }
+.pillar-title {
+  font-size: 24px; font-weight: 700;
+  color: var(--dark-charcoal); margin-bottom: 4px;
+  letter-spacing: -0.5px; line-height: 1.25;
+}
+.pillar-title-ko {
+  font-size: 14px; font-weight: 600;
+  color: var(--subtitle-text); margin-bottom: 18px;
+}
+.pillar-desc {
+  font-size: 14px; color: var(--body-text);
+  line-height: 1.75;
+}
+.pillar-desc-ko {
+  font-size: 12px; color: var(--subtitle-text);
+  line-height: 1.7; margin-top: 6px;
+}
+
+/* ── WHO ── */
+.who-card {
+  background: var(--dark-charcoal);
+  color: var(--white);
+  padding: 56px 48px;
+  border-left: 4px solid var(--action-orange);
+  margin-top: 24px;
+}
+@media (max-width: 700px) { .who-card { padding: 36px 28px; } }
+.who-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 14px 32px;
+  margin-bottom: 36px;
+}
+@media (max-width: 700px) { .who-grid { grid-template-columns: 1fr; } }
+.who-item {
+  padding: 6px 0 6px 32px;
+  position: relative;
+  border-bottom: 1px solid rgba(255,255,255,0.08);
+  padding-bottom: 12px;
+}
+.who-item::before {
+  content: '✓';
+  position: absolute; left: 0; top: 8px;
+  color: var(--action-orange); font-weight: 700; font-size: 16px;
+}
+.who-item-en {
+  font-size: 14px; font-weight: 500;
+  color: var(--white); line-height: 1.4;
+}
+.who-item-ko {
+  font-size: 12px; color: rgba(255,255,255,0.55);
+  margin-top: 3px;
+}
+.who-cta-row {
+  display: flex; gap: 16px; flex-wrap: wrap; align-items: center;
+  padding-top: 24px; border-top: 1px solid rgba(255,255,255,0.1);
+}
+.who-cta-row .btn-primary { padding: 14px 32px; font-size: 14px; }
+.who-cta-note {
+  font-size: 12px; color: rgba(255,255,255,0.55);
+}
+
+/* ── 4 EXAMPLES ── */
+.models-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 2px;
+}
+@media (max-width: 800px) { .models-grid { grid-template-columns: 1fr; } }
+.model-card {
+  background: var(--white);
+  padding: 32px 28px;
+  border-top: 4px solid var(--primary-orange);
+}
+.model-card:nth-child(2) { border-top-color: var(--orange3); }
+.model-card:nth-child(3) { border-top-color: var(--cyan); }
+.model-card:nth-child(4) { border-top-color: var(--green); }
+.model-num {
+  font-size: 11px; font-weight: 700;
+  color: var(--primary-orange); letter-spacing: 1.5px;
+  margin-bottom: 14px;
+}
+.model-card:nth-child(2) .model-num { color: var(--orange3); }
+.model-card:nth-child(3) .model-num { color: var(--cyan); }
+.model-card:nth-child(4) .model-num { color: var(--green); }
+.model-title {
+  font-size: 19px; font-weight: 700;
+  color: var(--dark-charcoal); margin-bottom: 2px;
+  letter-spacing: -0.3px; line-height: 1.3;
+}
+.model-title-ko {
+  font-size: 12px; color: var(--subtitle-text);
+  margin-bottom: 16px;
+}
+.model-desc-en {
+  font-size: 13px; color: var(--body-text);
+  line-height: 1.7;
+}
+.model-desc-ko {
+  font-size: 12px; color: var(--subtitle-text);
+  line-height: 1.7; margin-top: 6px;
+}
+.model-case {
+  margin-top: 14px; padding-top: 14px;
+  border-top: 1px dashed #ddd;
+  font-size: 12px; color: var(--body-text);
+  line-height: 1.65;
+}
+.model-case strong {
+  color: var(--primary-orange);
+  font-weight: 700; font-size: 10px;
+  letter-spacing: 1.5px; text-transform: uppercase;
+  display: block; margin-bottom: 6px;
+}
+.model-case .case-ko {
+  color: #999; font-size: 11px; display: block; margin-top: 2px;
+}
+
+/* ── ROADMAP JOURNEY ── */
+.roadmap-journey {
+  display: flex; gap: 0; margin-top: 16px;
+  flex-wrap: wrap;
+  background: var(--dark-charcoal); padding: 4px;
+}
+.roadmap-item {
+  flex: 1; min-width: 160px;
+  padding: 22px 24px;
+  color: var(--white); font-size: 13px;
+  position: relative;
+}
+.roadmap-item::after {
+  content: '→';
+  position: absolute; right: 8px; top: 50%; transform: translateY(-50%);
+  font-size: 20px; opacity: 0.4;
+}
+.roadmap-item:last-child::after { display: none; }
+.roadmap-item .roadmap-stage {
+  font-size: 10px; font-weight: 500;
+  opacity: 0.7; margin-bottom: 4px;
+  letter-spacing: 1px;
+}
+.roadmap-item .roadmap-date {
+  font-size: 11px; font-weight: 600;
+  opacity: 0.85; margin-bottom: 6px;
+}
+.roadmap-item .roadmap-name {
+  font-size: 14px; font-weight: 700;
+  letter-spacing: -0.3px;
+}
+.roadmap-item .roadmap-tag {
+  font-size: 11px; margin-top: 4px; opacity: 0.85;
+}
+
+.outputs-row {
+  margin-top: 48px;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 2px;
+}
+@media (max-width: 800px) { .outputs-row { grid-template-columns: repeat(2, 1fr); } }
+@media (max-width: 500px) { .outputs-row { grid-template-columns: 1fr; } }
+.output-cell {
+  background: var(--dark2);
+  padding: 24px 20px;
+  border-top: 2px solid var(--primary-orange);
+}
+.output-cell:nth-child(2) { border-top-color: var(--orange3); }
+.output-cell:nth-child(3) { border-top-color: var(--cyan); }
+.output-cell:nth-child(4) { border-top-color: var(--green); }
+.output-label {
+  font-size: 10px; font-weight: 700;
+  color: var(--action-orange); letter-spacing: 1.5px;
+  margin-bottom: 10px;
+}
+.output-cell:nth-child(2) .output-label { color: #FF9F66; }
+.output-cell:nth-child(3) .output-label { color: var(--cyan); }
+.output-cell:nth-child(4) .output-label { color: var(--green); }
+.output-title {
+  font-size: 14px; font-weight: 700;
+  color: var(--white); line-height: 1.35;
+  margin-bottom: 4px;
+}
+.output-title-ko {
+  font-size: 11px; color: rgba(255,255,255,0.55);
+}
+
+/* ── SCHEDULE (Day 1 / Day 2) ── */
+.sprint-cards {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 2px;
+}
+@media (max-width: 700px) { .sprint-cards { grid-template-columns: 1fr; } }
+.sprint-card {
+  padding: 36px 32px;
+  color: var(--white);
+}
+.sprint-card.accent { background: var(--primary-orange); }
+.sprint-card.dark { background: var(--dark2); border-top: 2px solid var(--action-orange); }
+.sprint-day {
+  font-size: 11px; opacity: 0.8;
+  letter-spacing: 1.5px; text-transform: uppercase;
+  margin-bottom: 12px;
+}
+.sprint-title {
+  font-size: 30px; font-weight: 700;
+  letter-spacing: -0.5px; line-height: 1;
+}
+.sprint-title-ko {
+  font-size: 13px; margin-top: 4px;
+  margin-bottom: 20px;
+}
+.sprint-card.accent .sprint-title-ko { opacity: 0.85; }
+.sprint-card.dark .sprint-title-ko { color: var(--action-orange); font-weight: 500; }
+.sprint-list { list-style: none; padding: 0; }
+.sprint-list li {
+  padding: 8px 0;
+  font-size: 13px; line-height: 1.5;
+  border-bottom: 1px dashed rgba(255,255,255,0.15);
+  display: flex; gap: 12px;
+}
+.sprint-card.accent .sprint-list li { border-color: rgba(255,255,255,0.2); }
+.sprint-list li:last-child { border-bottom: none; }
+.sprint-list .time {
+  font-weight: 700; opacity: 0.85;
+  font-size: 11px; letter-spacing: 0.5px;
+  min-width: 70px; padding-top: 2px;
+}
+.sprint-list .task strong { display: block; font-weight: 600; }
+.sprint-list .task .task-ko { font-size: 11px; opacity: 0.7; margin-top: 1px; }
+
+/* ── LMS ── */
+.lms-grid {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 2px;
+}
+.lms-grid.lms-grid-3 {
+  grid-template-columns: repeat(3, 1fr);
+}
+@media (max-width: 900px) { .lms-grid { grid-template-columns: repeat(2, 1fr); } }
+@media (max-width: 900px) { .lms-grid.lms-grid-3 { grid-template-columns: repeat(2, 1fr); } }
+@media (max-width: 500px) { .lms-grid { grid-template-columns: 1fr; } }
+@media (max-width: 500px) { .lms-grid.lms-grid-3 { grid-template-columns: 1fr; } }
+.lms-cell {
+  background: var(--white);
+  padding: 26px 22px;
+  border-top: 3px solid var(--primary-orange);
+}
+.lms-cell.featured { background: var(--primary-orange); }
+.lms-cell.featured .lms-num,
+.lms-cell.featured .lms-time { color: rgba(255,255,255,0.9); }
+.lms-cell.featured .lms-name { color: var(--white); }
+.lms-cell.featured .lms-name-ko { color: rgba(255,255,255,0.8); }
+.lms-cell.featured .lms-desc { color: rgba(255,255,255,0.88); }
+.lms-num {
+  font-size: 12px; font-weight: 700;
+  color: var(--primary-orange); letter-spacing: 1.5px;
+  margin-bottom: 8px;
+}
+.lms-time {
+  font-size: 11px; color: var(--subtitle-text);
+  margin-bottom: 12px;
+}
+.lms-name {
+  font-size: 15px; font-weight: 700;
+  color: var(--dark-charcoal); margin-bottom: 2px;
+  letter-spacing: -0.3px; line-height: 1.3;
+}
+.lms-name-ko {
+  font-size: 11px; color: var(--subtitle-text);
+  margin-bottom: 12px;
+}
+.lms-desc {
+  font-size: 12px; color: var(--body-text);
+  line-height: 1.6;
+}
+
+/* ── COACHING ── */
+.coaching-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2px;
+}
+@media (max-width: 700px) { .coaching-grid { grid-template-columns: 1fr; } }
+.coaching-card {
+  background: var(--white);
+  padding: 32px 28px;
+  border-top: 4px solid var(--primary-orange);
+}
+.coaching-card:nth-child(2) { border-top-color: var(--cyan); }
+.coaching-card:nth-child(3) { border-top-color: var(--green); }
+.coaching-week {
+  font-size: 11px; font-weight: 700;
+  color: var(--primary-orange); letter-spacing: 1.5px;
+  margin-bottom: 12px;
+}
+.coaching-card:nth-child(2) .coaching-week { color: var(--cyan); }
+.coaching-card:nth-child(3) .coaching-week { color: var(--green); }
+.coaching-title {
+  font-size: 18px; font-weight: 700;
+  color: var(--dark-charcoal); margin-bottom: 2px;
+  letter-spacing: -0.3px;
+}
+.coaching-title-ko {
+  font-size: 12px; color: var(--subtitle-text);
+  margin-bottom: 14px;
+}
+.coaching-desc {
+  font-size: 13px; color: var(--body-text);
+  line-height: 1.7;
+}
+.coaching-desc-ko {
+  font-size: 11px; color: var(--subtitle-text);
+  margin-top: 6px; line-height: 1.6;
+}
+
+.visa-pathway {
+  margin-top: 48px;
+  padding: 36px 44px;
+  background: var(--dark-charcoal);
+  color: var(--white);
+  border-left: 4px solid var(--action-orange);
+}
+@media (max-width: 700px) { .visa-pathway { padding: 28px 24px; } }
+.visa-pathway .label {
+  font-size: 11px; font-weight: 600;
+  color: var(--action-orange); letter-spacing: 2px; text-transform: uppercase;
+  margin-bottom: 12px;
+}
+.visa-pathway h3 {
+  font-size: 22px; font-weight: 700;
+  color: var(--white); margin-bottom: 4px;
+  letter-spacing: -0.5px;
+}
+.visa-pathway h4 {
+  font-size: 13px; color: #999; margin-bottom: 18px;
+}
+.visa-chain {
+  font-size: clamp(14px, 1.8vw, 17px);
+  color: var(--warm-gray);
+  line-height: 2.2;
+}
+.visa-chain strong {
+  color: var(--action-orange);
+  background: rgba(255,130,4,0.08);
+  padding: 4px 10px;
+  margin: 0 2px;
+  font-weight: 700;
+}
+.visa-chain .visa-arrow {
+  display: inline-block; margin: 0 6px;
+  color: var(--action-orange); opacity: 0.5;
+}
+.visa-chain-note {
+  font-size: 12px; color: #888; margin-top: 10px;
+}
+
+/* ── APPLY ── */
+.apply-cta-card {
+  background: linear-gradient(135deg, var(--primary-orange), var(--orange3));
+  padding: 56px 48px;
+  color: var(--white);
+  margin-bottom: 32px;
+  position: relative; overflow: hidden;
+}
+@media (max-width: 700px) { .apply-cta-card { padding: 40px 28px; } }
+.apply-cta-card::before {
+  content: ''; position: absolute;
+  top: -150px; right: -150px;
+  width: 400px; height: 400px;
+  background: radial-gradient(circle, rgba(255,255,255,0.10) 0%, transparent 70%);
+  pointer-events: none;
+}
+.apply-cta-card-inner {
+  position: relative; z-index: 1;
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  gap: 36px; align-items: center;
+}
+@media (max-width: 700px) {
+  .apply-cta-card-inner { grid-template-columns: 1fr; gap: 28px; }
+}
+.apply-cta-card h2 {
+  font-size: clamp(26px, 4vw, 40px); font-weight: 700;
+  color: var(--white); margin-bottom: 6px;
+  letter-spacing: -1px; line-height: 1.15;
+}
+.apply-cta-card-ko {
+  font-size: 14px; color: rgba(255,255,255,0.9);
+  margin-bottom: 16px;
+}
+.apply-cta-card-meta {
+  display: flex; flex-wrap: wrap; gap: 20px;
+  font-size: 12px; color: rgba(255,255,255,0.9);
+  letter-spacing: 0.3px;
+}
+.apply-cta-card-meta strong { font-weight: 700; }
+.apply-cta-card .btn-white {
+  display: inline-flex; align-items: center; gap: 10px;
+  font-size: 17px; font-weight: 700;
+  color: var(--primary-orange); background: var(--white);
+  padding: 22px 36px; text-decoration: none;
+  transition: all 0.3s;
+  white-space: nowrap;
+}
+.apply-cta-card .btn-white:hover {
+  background: var(--dark-charcoal); color: var(--white);
+}
+
+.eligibility-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 2px; margin-top: 16px;
+}
+@media (max-width: 700px) { .eligibility-grid { grid-template-columns: 1fr; } }
+.eligibility-col {
+  background: var(--white);
+  padding: 32px 28px;
+  border-top: 4px solid var(--green);
+}
+.eligibility-col.cannot { border-top-color: var(--orange3); }
+.eligibility-col h3 {
+  font-size: 16px; font-weight: 700;
+  color: var(--dark-charcoal); margin-bottom: 2px;
+  letter-spacing: -0.3px;
+}
+.eligibility-col-ko {
+  font-size: 12px; color: var(--subtitle-text); margin-bottom: 16px;
+}
+.eligibility-col ul { list-style: none; padding: 0; }
+.eligibility-col li {
+  padding: 10px 0 10px 28px; position: relative;
+  border-bottom: 1px dashed #eee;
+}
+.eligibility-col li:last-child { border-bottom: none; }
+.eligibility-col li::before {
+  content: '✓'; position: absolute; left: 0; top: 10px;
+  color: var(--green); font-weight: 700;
+}
+.eligibility-col.cannot li::before { content: '×'; color: var(--orange3); }
+.li-en { font-size: 13px; color: var(--body-text); font-weight: 500; }
+.li-ko { font-size: 11px; color: var(--subtitle-text); display: block; margin-top: 2px; }
+
+.process-grid {
+  margin-top: 48px;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 2px;
+}
+@media (max-width: 800px) { .process-grid { grid-template-columns: repeat(2, 1fr); } }
+@media (max-width: 500px) { .process-grid { grid-template-columns: 1fr; } }
+.process-step {
+  background: var(--light-beige);
+  padding: 26px 22px;
+  border-top: 2px solid var(--primary-orange);
+}
+.process-num {
+  font-size: 26px; font-weight: 700;
+  color: var(--primary-orange); line-height: 1;
+  margin-bottom: 12px;
+  letter-spacing: -1px;
+}
+.process-title {
+  font-size: 14px; font-weight: 700;
+  color: var(--dark-charcoal); margin-bottom: 2px;
+  letter-spacing: -0.3px;
+}
+.process-title-ko {
+  font-size: 11px; color: var(--subtitle-text);
+  margin-bottom: 10px;
+}
+.process-desc {
+  font-size: 12px; color: var(--body-text);
+  line-height: 1.65;
+}
+.process-desc-ko {
+  font-size: 11px; color: var(--subtitle-text); margin-top: 4px;
+}
+
+/* ── FAQ ── */
+.faq-list { margin-top: 24px; display: flex; flex-direction: column; gap: 2px; }
+.faq-item {
+  background: var(--white);
+  cursor: pointer; transition: all 0.2s;
+}
+.faq-header {
+  padding: 20px 26px;
+  display: flex; justify-content: space-between; align-items: center;
+  gap: 16px;
+}
+.faq-q {
+  font-size: 15px; font-weight: 600;
+  color: var(--dark-charcoal);
+}
+.faq-q-ko {
+  font-size: 12px; color: var(--subtitle-text);
+  margin-top: 3px; font-weight: 400;
+}
+.faq-icon {
+  font-size: 26px; font-weight: 300;
+  color: var(--primary-orange);
+  transition: transform 0.3s;
+  flex-shrink: 0; line-height: 1;
+}
+.faq-item.open .faq-icon { transform: rotate(45deg); }
+.faq-answer {
+  max-height: 0; overflow: hidden;
+  transition: max-height 0.4s ease;
+}
+.faq-item.open .faq-answer { max-height: 400px; }
+.faq-answer-inner {
+  padding: 0 26px 22px;
+  border-top: 1px solid var(--light-beige);
+}
+.faq-answer-inner p {
+  font-size: 13px; color: var(--body-text);
+  line-height: 1.75; margin-top: 12px;
+}
+.faq-answer-inner p.ko {
+  font-size: 12px; color: var(--subtitle-text);
+  margin-top: 4px;
+}
+
+/* ── FINAL CTA ── */
+.cta-final {
+  background: var(--primary-orange);
+  padding: 100px 32px;
+  text-align: center;
+  position: relative; overflow: hidden;
+}
+.cta-final::before {
+  content: ''; position: absolute;
+  top: -200px; right: -200px;
+  width: 600px; height: 600px;
+  background: radial-gradient(circle, rgba(255,255,255,0.10) 0%, transparent 70%);
+  pointer-events: none;
+}
+.cta-final h2 {
+  font-size: clamp(28px, 4.5vw, 48px); font-weight: 700;
+  color: var(--white); line-height: 1.15;
+  letter-spacing: -1px; margin-bottom: 6px;
+  position: relative; z-index: 1;
+  max-width: 880px; margin-left: auto; margin-right: auto;
+}
+.cta-final .cta-sub {
+  font-size: 16px; font-weight: 500;
+  color: rgba(255,255,255,0.9); margin-bottom: 32px;
+  position: relative; z-index: 1;
+}
+.cta-final-meta {
+  display: flex; justify-content: center; flex-wrap: wrap;
+  gap: 28px; margin-bottom: 36px;
+  font-size: 13px; color: rgba(255,255,255,0.92);
+  position: relative; z-index: 1;
+}
+.cta-final-meta strong { font-weight: 700; }
+.cta-final .btn-white {
+  display: inline-block;
+  font-size: 17px; font-weight: 700;
+  color: var(--primary-orange); background: var(--white);
+  padding: 20px 60px; text-decoration: none;
+  transition: all 0.3s;
+  position: relative; z-index: 1;
+}
+.cta-final .btn-white:hover {
+  background: var(--dark-charcoal); color: var(--white);
+}
+
+/* ── Footer ── */
+.footer {
+  background: var(--dark-charcoal);
+  border-top: 3px solid var(--primary-orange);
+  padding: 56px 32px 28px;
+  color: var(--warm-gray);
+}
+.footer-inner {
+  max-width: 1200px; margin: 0 auto;
+  display: grid; grid-template-columns: 2fr 1fr 1fr;
+  gap: 48px;
+}
+@media (max-width: 700px) {
+  .footer-inner { grid-template-columns: 1fr; gap: 32px; }
+}
+.footer-brand-name {
+  font-size: 22px; font-weight: 700; font-style: italic;
+  color: var(--white); letter-spacing: -0.5px;
+  margin-bottom: 10px;
+}
+.footer-tagline {
+  font-size: 13px; color: var(--warm-gray);
+  line-height: 1.7; margin-bottom: 14px;
+}
+.footer-host {
+  font-size: 12px; color: #888;
+  margin-bottom: 4px;
+}
+.footer-host strong { color: var(--action-orange); }
+.footer-col-title {
+  font-size: 11px; font-weight: 700;
+  color: var(--action-orange); letter-spacing: 1.5px;
+  text-transform: uppercase; margin-bottom: 14px;
+}
+.footer-col ul { list-style: none; padding: 0; }
+.footer-col li {
+  font-size: 13px; color: var(--warm-gray);
+  padding: 4px 0; line-height: 1.6;
+}
+.footer-col li a {
+  color: var(--warm-gray); text-decoration: none;
+  transition: color 0.2s;
+}
+.footer-col li a:hover { color: var(--action-orange); }
+.footer-bottom {
+  max-width: 1200px; margin: 36px auto 0;
+  padding-top: 24px;
+  border-top: 1px solid rgba(255,255,255,0.08);
+  display: flex; justify-content: space-between;
+  flex-wrap: wrap; gap: 16px;
+  font-size: 12px; color: #777;
+}
+</style>
+</head>
+<body class="">
+
+<!-- ── NAV ── -->
+<nav class="nav scrolled" id="nav">
+  <div class="nav-brand">
+    <span class="nav-logo">K×CROSSBORDER</span>
+    <span class="nav-badge">JUN 2026</span>
+  </div>
+  <div class="nav-links">
+    <a href="https://underdogs.global/" target="_blank" rel="noopener" class="nav-company-link">underdogs.global ↗</a>
+    <a href="#why">Why</a>
+    <a href="#who">Who</a>
+    <a href="#examples">Examples</a>
+    <a href="#roadmap">Roadmap</a>
+    <a href="#schedule">Schedule</a>
+    <a href="#faq">FAQ</a>
+    <a class="nav-cta" href="https://docs.google.com/forms/d/e/1FAIpQLSeZpjGO9kVO0KTAtm_PHzOQd4KMxUmWIuwW8BLGFvf7UmBFpA/viewform" target="_blank" rel="noopener">Apply → 신청</a>
+  </div>
+</nav>
+
+<!-- ── HERO ── -->
+<section class="hero">
+  <div class="hero-quote-mark">"</div>
+  <div class="hero-accent-1"></div>
+  <div class="hero-accent-2"></div>
+  <div class="hero-inner">
+    <div class="hero-badge">underdogs × UD IMPACT · 2026</div>
+    <h1>Hackathon for</h1>
+    <h1>international students</h1>
+    <h1><span>with AI.</span></h1>
+    <div class="hero-h1-ko">AI로 만드는 외국인 유학생 해커톤</div>
+    <p class="hero-subtitle">
+      Your <strong style="color:#FF8204">two-country edge</strong> ×
+      <strong style="color:#FF8204">AI</strong> ×
+      the <strong style="color:#FF8204">Korean startup visa Roadmap</strong>&nbsp;— 2 days in Seoul.
+    </p>
+    <p class="hero-subtitle-ko">
+      두 시장에 대한 이해도 × AI × OASIS 창업비자 로드맵 — 2일간 압축 진행합니다.
+    </p>
+    <div class="hero-ctas">
+      <a class="btn-primary" href="https://docs.google.com/forms/d/e/1FAIpQLSeZpjGO9kVO0KTAtm_PHzOQd4KMxUmWIuwW8BLGFvf7UmBFpA/viewform" target="_blank" rel="noopener">Apply Now · 신청하기 →</a>
+      <a class="btn-secondary" href="#why">How it works · 자세히</a>
+      <div class="hero-cta-note">⏱ Apply by <strong>~ Jun 2</strong> · 5 min · Free</div>
+    </div>
+    <div class="hero-stats">
+      <div>
+        <div class="hero-stat-num">~ Jun 2</div>
+        <div class="hero-stat-label">Apply by</div>
+        <div class="hero-stat-label-ko">신청 마감</div>
+      </div>
+      <div>
+        <div class="hero-stat-num">Jun 6–7</div>
+        <div class="hero-stat-label">Sat 13:00 → Sun 13:00</div>
+        <div class="hero-stat-label-ko">토 13:00 ~ 일 13:00 · 2일간</div>
+      </div>
+      <div>
+        <div class="hero-stat-num">~ 30</div>
+        <div class="hero-stat-label">Solo &amp; Team</div>
+        <div class="hero-stat-label-ko">솔로 · 팀 30명</div>
+      </div>
+      <div>
+        <div class="hero-stat-num">100%</div>
+        <div class="hero-stat-label">English</div>
+        <div class="hero-stat-label-ko">영어 진행</div>
+      </div>
+      <div>
+        <div class="hero-stat-num">FREE</div>
+        <div class="hero-stat-label">GSC Lounge · Seoul</div>
+        <div class="hero-stat-label-ko">참가비 무료 · 서울</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── 3 PILLARS ── -->
+<section id="why">
+  <div class="container">
+    <div class="section-header">
+      <div class="section-label">Why · 핵심 3가지</div>
+      <div class="section-header-divider"></div>
+      <h2>The only program that<br>combines all three.</h2>
+      <h3>이 세 가지를 한 프로그램에 담았습니다.</h3>
+    </div>
+    <div class="pillars-grid">
+      <div class="pillar-card">
+        <div class="pillar-num">01 / EDGE</div>
+        <div class="pillar-title">Two markets,<br>one founder.</div>
+        <div class="pillar-title-ko">두 시장을 아는 당신만의 무기</div>
+        <div class="pillar-desc">
+          Bilingual. Bicultural. The unfair advantage Korean founders simply can't match.
+        </div>
+        <div class="pillar-desc-ko">
+          두 나라 · 두 언어 · 두 네트워크 — 한국인 창업자는 절대 따라올 수 없는 무기입니다.
+        </div>
+      </div>
+      <div class="pillar-card">
+        <div class="pillar-num">02 / AI</div>
+        <div class="pillar-title">Build fast<br>with AI.</div>
+        <div class="pillar-title-ko">AI를 옆에 두고 빠르게 만든다</div>
+        <div class="pillar-desc">
+          Claude · Lovable · Canva AI ship your landing page, prototype, and BM by the end of Day 2. No coding needed.
+        </div>
+        <div class="pillar-desc-ko">
+          Claude · Lovable · Canva AI로 랜딩페이지 · 프로토타입 · 사업계획서까지 Day 2 안에 완성. 코딩 안 해도 됩니다.
+        </div>
+      </div>
+      <div class="pillar-card">
+        <div class="pillar-num">03 / VISA</div>
+        <div class="pillar-title">Stay in Korea<br>(D-8-4).</div>
+        <div class="pillar-title-ko">한국에 정주 — OASIS 창업비자</div>
+        <div class="pillar-desc">
+          OASIS scoring + 3-week coaching + a ready-to-submit D-8-4 document folder.
+        </div>
+        <div class="pillar-desc-ko">
+          OASIS 점수 진단 · 3주 코칭 · D-8-4 신청용 서류 폴더까지 — 비자까지 같이 갑니다.
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── WHO ── -->
+<section id="who" class="beige">
+  <div class="container">
+    <div class="section-header">
+      <div class="section-label">Who · 대상</div>
+      <div class="section-header-divider"></div>
+      <h2>Built for you, if…</h2>
+      <h3>이런 분이라면 — 바로 신청하세요.</h3>
+    </div>
+    <div class="who-card">
+      <div class="who-grid">
+        <div class="who-item">
+          <div class="who-item-en">You're an international student in Korea</div>
+          <div class="who-item-ko">한국 대학에 재학 중인 외국인 유학생</div>
+        </div>
+        <div class="who-item">
+          <div class="who-item-en">You want to build something only you can</div>
+          <div class="who-item-ko">유학생만이 할 수 있는 창업을 하고 싶다</div>
+        </div>
+        <div class="who-item">
+          <div class="who-item-en">You're curious about AI — coding skills not required</div>
+          <div class="who-item-ko">AI에 관심 있다 — 코딩 능력 불필요</div>
+        </div>
+        <div class="who-item">
+          <div class="who-item-en">You want to know if you can stay in Korea as a founder</div>
+          <div class="who-item-ko">한국에 창업자로 정주할 수 있는지 궁금하다</div>
+        </div>
+        <div class="who-item">
+          <div class="who-item-en">Solo or team — individual, or with 2–3 people</div>
+          <div class="who-item-ko">솔로 또는 팀 — 혼자 오거나 2~3명 팀으로 신청 가능</div>
+        </div>
+        <div class="who-item">
+          <div class="who-item-en">Available in Seoul on Jun 6–7, in English</div>
+          <div class="who-item-ko">6/6~7 서울 현장 · 영어 진행 참가 가능</div>
+        </div>
+      </div>
+      <div class="who-cta-row">
+        <a class="btn-primary" href="https://docs.google.com/forms/d/e/1FAIpQLSeZpjGO9kVO0KTAtm_PHzOQd4KMxUmWIuwW8BLGFvf7UmBFpA/viewform" target="_blank" rel="noopener">Apply Now · 신청하기 →</a>
+        <div class="who-cta-note">No finished idea required · 완성된 아이디어 없어도 됩니다</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── 4 EXAMPLES ── -->
+<section id="examples">
+  <div class="container">
+    <div class="section-header">
+      <div class="section-label">Examples · 사례</div>
+      <div class="section-header-divider"></div>
+      <h2>Four examples of what<br>only you can build.</h2>
+      <h3>유학생만이 할 수 있는 창업 — 예시 4가지 (꼭 이 중 하나일 필요는 없습니다)</h3>
+    </div>
+    <div class="models-grid">
+      <div class="model-card">
+        <div class="model-num">EXAMPLE 01</div>
+        <div class="model-title">Bridge Between Markets</div>
+        <div class="model-title-ko">한국 ↔ 본국을 잇는 무역 · 유통 · 콘텐츠</div>
+        <div class="model-desc-en">
+          K-beauty home. Home market into Korea. Your bilingual fluency is the moat.
+        </div>
+        <div class="model-desc-ko">
+          K-뷰티를 본국으로, 본국 아이템을 한국으로 — 이중언어가 그대로 진입장벽.
+        </div>
+        <div class="model-case">
+          <strong>Real case · 실제 사례</strong>
+          Vietnamese student → Korean skincare D2C in Hanoi → ₩2B GMV in 18 months.
+          <span class="case-ko">베트남 유학생이 하노이에 한국 화장품 D2C → 18개월 ₩2B GMV.</span>
+        </div>
+      </div>
+      <div class="model-card">
+        <div class="model-num">EXAMPLE 02</div>
+        <div class="model-title">Solve What You've Lived</div>
+        <div class="model-title-ko">유학 생활에서 직접 겪은 불편 풀기</div>
+        <div class="model-desc-en">
+          40 minutes at immigration. 100 explanations of your name. Build that.
+        </div>
+        <div class="model-desc-ko">
+          출입국 40분 대기 · 배달앱에 이름 100번 — 그걸 풀어내세요.
+        </div>
+        <div class="model-case">
+          <strong>Real case · 실제 사례</strong>
+          Mongolian student → Korean-gov-form translation service → 4k MAU · profitable.
+          <span class="case-ko">몽골 유학생 → 정부 서류 번역 서비스 → 4k MAU · 흑자.</span>
+        </div>
+      </div>
+      <div class="model-card">
+        <div class="model-num">EXAMPLE 03</div>
+        <div class="model-title">Domain Expert Founder</div>
+        <div class="model-title-ko">전공 · 논문 · 특허 기반 기술창업</div>
+        <div class="model-desc-en">
+          STEM thesis, lab IP, patent — the strongest OASIS card for D-8-4.
+        </div>
+        <div class="model-desc-ko">
+          이공계 논문 · 연구실 IP · 특허 — D-8-4 OASIS 점수에 가장 강한 카드.
+        </div>
+        <div class="model-case">
+          <strong>Real case · 실제 사례</strong>
+          Pakistani PhD → battery-management patent commercialized → OASIS 70pt → D-8-4 secured.
+          <span class="case-ko">파키스탄 박사과정 학생이 배터리 특허 사업화 → OASIS 70점 → D-8-4 취득.</span>
+        </div>
+      </div>
+      <div class="model-card">
+        <div class="model-num">EXAMPLE 04</div>
+        <div class="model-title">Community as Product</div>
+        <div class="model-title-ko">다국어 커뮤니티 · 플랫폼 그 자체가 프로덕트</div>
+        <div class="model-desc-en">
+          Not software — the gathering itself. Multilingual, diaspora, niche creator economies.
+        </div>
+        <div class="model-desc-ko">
+          소프트웨어가 아니라 "모임" 자체가 프로덕트 — 다국어 · 디아스포라 · 니치.
+        </div>
+        <div class="model-case">
+          <strong>Real case · 실제 사례</strong>
+          Indonesian student → Halal-food-Seoul Telegram channel → marketplace, 12k members.
+          <span class="case-ko">인도네시아 유학생 → 할랄푸드 텔레그램 채널 → 마켓플레이스 12k 회원.</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── ROADMAP ── -->
+<section id="roadmap" class="dark">
+  <div class="container">
+    <div class="section-header">
+      <div class="section-label">Roadmap · 전체 로드맵</div>
+      <div class="section-header-divider"></div>
+      <h2>From apply to your own path.</h2>
+      <h3>신청부터 본인의 다음 단계까지 — 6주 사이클</h3>
+    </div>
+    <div class="roadmap-journey">
+      <div class="roadmap-item" style="background:#1F2020;">
+        <div class="roadmap-stage">STAGE 0</div>
+        <div class="roadmap-date">~ Jun 2</div>
+        <div class="roadmap-name">Apply</div>
+        <div class="roadmap-tag">5-min form</div>
+      </div>
+      <div class="roadmap-item" style="background:#2D2D2D;">
+        <div class="roadmap-stage">STAGE 1</div>
+        <div class="roadmap-date">Upon Apply ~ Jun 5</div>
+        <div class="roadmap-name">Pre-Learning</div>
+        <div class="roadmap-tag">LMS · Pre-Learning</div>
+      </div>
+      <div class="roadmap-item" style="background:var(--primary-orange);">
+        <div class="roadmap-stage">STAGE 2</div>
+        <div class="roadmap-date">Jun 6–7</div>
+        <div class="roadmap-name">Hackathon</div>
+        <div class="roadmap-tag">2 days · Seoul</div>
+      </div>
+      <div class="roadmap-item" style="background:#2D2D2D;">
+        <div class="roadmap-stage">STAGE 3</div>
+        <div class="roadmap-date">Jun 7 →</div>
+        <div class="roadmap-name">Coaching</div>
+        <div class="roadmap-tag">3 weeks · 1:1 online</div>
+      </div>
+      <div class="roadmap-item" style="background:#1F2020;">
+        <div class="roadmap-stage">STAGE 4</div>
+        <div class="roadmap-date">Beyond</div>
+        <div class="roadmap-name">Your Path</div>
+        <div class="roadmap-tag">D-8-4 · D-8 · E-7</div>
+      </div>
+    </div>
+
+    <div style="margin-top:48px; font-size:11px; font-weight:700; color:var(--action-orange); letter-spacing:2px; text-transform:uppercase;">
+      What you walk out with · 손에 남는 4가지
+    </div>
+    <div class="outputs-row">
+      <div class="output-cell">
+        <div class="output-label">OUTPUT 01</div>
+        <div class="output-title">Live landing page or prototype</div>
+        <div class="output-title-ko">작동하는 랜딩페이지 · 프로토타입</div>
+      </div>
+      <div class="output-cell">
+        <div class="output-label">OUTPUT 02</div>
+        <div class="output-title">AI-built business plan draft</div>
+        <div class="output-title-ko">AI 사업계획서 초안</div>
+      </div>
+      <div class="output-cell">
+        <div class="output-label">OUTPUT 03</div>
+        <div class="output-title">Action Plan</div>
+        <div class="output-title-ko">사업화 실행 계획</div>
+      </div>
+      <div class="output-cell">
+        <div class="output-label">OUTPUT 04</div>
+        <div class="output-title">OASIS visa readiness check</div>
+        <div class="output-title-ko">OASIS 점수 현황 진단</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── SCHEDULE ── -->
+<section id="schedule">
+  <div class="container">
+    <div class="section-header">
+      <div class="section-label">Schedule · 일정</div>
+      <div class="section-header-divider"></div>
+      <h2>Two days. Real output at every step.</h2>
+      <p class="schedule-accommodation-note">Accommodation not provided · 숙박 미제공</p>
+      <h3>2일간 진행 (토 13:00 ~ 22:00 · 일 09:00 ~ 13:00) — 강의 최소, 퀘스트 기반 코호트 스터디 최대</h3>
+    </div>
+
+    <div class="sprint-cards">
+      <div class="sprint-card accent">
+        <div class="sprint-day">SAT · JUN 6 · 13:00 – 22:00</div>
+        <div class="sprint-title">Day 1</div>
+        <div class="sprint-title-ko">Discover → Build · 발굴하고 만든다</div>
+        <ul class="sprint-list">
+          <li><span class="time">13:00</span><span class="task"><strong>Opening · Act-preneur Mindset &amp; K-Crossborder Concept</strong><span class="task-ko">오프닝 · 액트프러너 마인드셋 &amp; K-Crossborder 컨셉</span></span></li>
+          <li><span class="time">13:40</span><span class="task"><strong>Quest-based Cohort Study — My Unfair Advantages</strong><span class="task-ko">퀘스트 기반 코호트 스터디 — 나만의 불공정 우위</span></span></li>
+          <li><span class="time">14:10</span><span class="task"><strong>Quest-based Cohort Study — Problem, Customers</strong><span class="task-ko">퀘스트 기반 코호트 스터디 — 문제, 고객 정의</span></span></li>
+          <li><span class="time">15:30</span><span class="task"><strong>Checkpoint Presentation</strong><span class="task-ko">중간 점검 발표</span></span></li>
+          <li><span class="time">16:00</span><span class="task"><strong>Lecture — AI Prototyping</strong><span class="task-ko">강의 — AI 바이브 코딩으로 빠르게 프로토타입 만들기</span></span></li>
+          <li><span class="time">17:00</span><span class="task"><strong>Quest-based Cohort Study — Prototyping</strong><span class="task-ko">퀘스트 기반 코호트 스터디 — 프로토타이핑</span></span></li>
+          <li><span class="time">18:00</span><span class="task"><strong>Dinner · Networking</strong><span class="task-ko">저녁 · 네트워킹</span></span></li>
+          <li><span class="time">19:00</span><span class="task"><strong>Checkpoint Presentation</strong><span class="task-ko">중간 점검 발표</span></span></li>
+          <li><span class="time">20:00</span><span class="task"><strong>Quest-based Cohort Study — Pricing, Customer Acquisition</strong><span class="task-ko">퀘스트 기반 코호트 스터디 — 가격 전략, 고객 유입 전략</span></span></li>
+          <li><span class="time">21:30</span><span class="task"><strong>Day 1 Wrap</strong><span class="task-ko">Day 1 랩업</span></span></li>
+        </ul>
+      </div>
+      <div class="sprint-card dark">
+        <div class="sprint-day">SUN · JUN 7 · 09:00 – 13:00</div>
+        <div class="sprint-title">Day 2</div>
+        <div class="sprint-title-ko">Refine → Pitch · 다듬고 발표한다</div>
+        <ul class="sprint-list">
+          <li><span class="time">09:00</span><span class="task"><strong>Opening — Overall Progress Update</strong><span class="task-ko">전체 진행상황 공유</span></span></li>
+          <li><span class="time">09:30</span><span class="task"><strong>Quest-based Cohort Study — Action Plan / Final Presentation Check</strong><span class="task-ko">퀘스트 기반 코호트 스터디 — 실행 계획 / 최종 발표 점검</span></span></li>
+          <li><span class="time">11:00</span><span class="task"><strong>Final Pitching</strong><span class="task-ko">최종 발표</span></span></li>
+          <li><span class="time">12:45</span><span class="task"><strong>Closing</strong><span class="task-ko">마무리</span></span></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── PRE-LEARNING ── -->
+<section id="pre-learning" class="beige">
+  <div class="container">
+    <div class="section-header">
+      <div class="section-label">Pre-Learning · 사전학습</div>
+      <div class="section-header-divider"></div>
+      <h2>Day 1 isn't where it starts.</h2>
+      <h3>Day 1이 출발선이 아닙니다 — 신청 즉시 LMS 3개 모듈 (I · M · P) 사전 학습 · ~ 6/5 학습 완료</h3>
+    </div>
+    <div class="lms-grid lms-grid-3">
+      <div class="lms-cell">
+        <div class="lms-num">Ideation</div>
+        <div class="lms-time">Self-study · Module 1</div>
+        <div class="lms-name"><span style="color: rgb(102, 102, 102); font-size: 11px; font-weight: 400; letter-spacing: normal;">아이디어 발굴</span></div>
+        <div class="lms-name-ko"><br></div>
+        <div class="lms-desc">Defining the purpose, mindset, and resources to build a foundation for my entrepreneurial journey.</div>
+      </div>
+      <div class="lms-cell">
+        <div class="lms-num">Market</div>
+        <div class="lms-time">Self-study · Module 2</div>
+        <div class="lms-name"><span style="color: rgb(102, 102, 102); font-size: 11px; font-weight: 400; letter-spacing: normal;">시장 탐색</span></div>
+        <div class="lms-name-ko"><br></div>
+        <div class="lms-desc">Identifying the target customer and validating their core pain points to ensure we are solving a real problem.</div>
+      </div>
+      <div class="lms-cell">
+        <div class="lms-num">Product</div>
+        <div class="lms-time">Self-study · Module 3</div>
+        <div class="lms-name"><span style="color: rgb(102, 102, 102); font-size: 11px; font-weight: 400; letter-spacing: normal;">프로덕트 설계</span></div>
+        <div class="lms-name-ko"><br></div>
+        <div class="lms-desc">Defining our unique value proposition and designing a functional prototype to showcase a seamless solution flow.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── AFTER (Coaching) ── -->
+<section id="coaching">
+  <div class="container">
+    <div class="section-header">
+      <div class="section-label">After · 후속 코칭</div>
+      <div class="section-header-divider"></div>
+      <h2>3 weeks of 1:1 coaching<br>after the sprint.</h2>
+      <h3>해커톤 이후 3주 · 1:1 온라인 코칭 · OASIS VISA Roadmap 까지 같이 갑니다</h3>
+    </div>
+    <div class="coaching-grid">
+      <div class="coaching-card">
+        <div class="coaching-week">SESSION 01 · Week 1</div>
+        <div class="coaching-title">Business Plan</div>
+        <div class="coaching-title-ko">사업계획서 고도화</div>
+        <div class="coaching-desc">Idea → execution plan. Gap analysis + fix list.</div>
+        <div class="coaching-desc-ko">아이디어를 실행 계획으로 · 빈틈 분석 + 보완 리스트.</div>
+      </div>
+      <div class="coaching-card">
+        <div class="coaching-week">SESSION 02 · Week 2</div>
+        <div class="coaching-title">Product</div>
+        <div class="coaching-title-ko">프로덕트 고도화</div>
+        <div class="coaching-desc">Landing-page improvements + real customer reactions. Hold or pivot.</div>
+        <div class="coaching-desc-ko">랜딩페이지 개선 + 실제 고객 반응 · 유지할지 피벗할지.</div>
+      </div>
+      <div class="coaching-card">
+        <div class="coaching-week">SESSION 03 · Week 3</div>
+        <div class="coaching-title">OASIS Visa Roadmap</div>
+        <div class="coaching-title-ko">OASIS 비자 로드맵</div>
+        <div class="coaching-desc">OASIS-checklist-based prep. Folder ready for D-8-4 submission.</div>
+        <div class="coaching-desc-ko">OASIS 기반 서류 준비 · D-8-4 신청용 폴더 완성.</div>
+      </div>
+    </div>
+
+    <div class="visa-pathway">
+      <div class="label">The Full Visa Path · 비자 풀 로드맵</div>
+      <h3>Student → Founder in Korea</h3>
+      <h4>유학생에서 한국 정주 창업가로 가는 길</h4>
+      <div class="visa-chain">
+        <strong>D-2</strong><span class="visa-arrow">→</span>
+        <strong>D-10-2</strong><span class="visa-arrow">→</span>
+        <strong>OASIS 60+</strong><span class="visa-arrow">→</span>
+        <strong>D-8-4</strong>
+      </div>
+      <div class="visa-chain-note">
+        Most international student founders take this path · D-8 investor and E-7 are also covered.<br>
+        유학생 창업자 다수가 밟는 길 · D-8 기업투자 · E-7 취업도 같이 다룹니다.
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── APPLY ── -->
+<section id="apply" class="beige">
+  <div class="container">
+    <div class="section-header">
+      <div class="section-label">Apply · 신청</div>
+      <div class="section-header-divider"></div>
+      <h2>Ready? Apply in 5 minutes.</h2>
+      <h3>5분이면 신청 끝 · 완성된 아이디어 불필요</h3>
+    </div>
+
+    <div class="apply-cta-card">
+      <div class="apply-cta-card-inner">
+        <div>
+          <h2>Apply Now</h2>
+          <div class="apply-cta-card-ko">지금 신청하세요 — 마감까지 얼마 안 남았습니다.</div>
+          <div class="apply-cta-card-meta">
+            <span><strong>Apply by · 신청</strong> Jun 2</span>
+            <span><strong>Hackathon · 해커톤</strong> Jun 6–7</span>
+            <span><strong>Spots · 인원</strong> ~30</span>
+            <span><strong>Cost · 비용</strong> Free</span>
+          </div>
+        </div>
+        <a class="btn-white" href="https://docs.google.com/forms/d/e/1FAIpQLSeZpjGO9kVO0KTAtm_PHzOQd4KMxUmWIuwW8BLGFvf7UmBFpA/viewform" target="_blank" rel="noopener" id="apply-cta-main">Apply Now · 신청하기 →</a>
+      </div>
+    </div>
+
+    <div class="eligibility-grid">
+      <div class="eligibility-col">
+        <h3>Who can apply</h3>
+        <div class="eligibility-col-ko">신청 가능</div>
+        <ul>
+          <li><span class="li-en">International student at a Korean university</span><span class="li-ko">한국 대학 재학 외국인 유학생</span></li>
+          <li><span class="li-en">3rd/4th-year undergrad or graduate / PhD</span><span class="li-ko">학부 3·4학년 또는 대학원·박사과정</span></li>
+          <li><span class="li-en">Comfortable in English</span><span class="li-ko">영어 소통 가능</span></li>
+          <li><span class="li-en">Solo or team — individual, or 2–3 person group</span><span class="li-ko">솔로 또는 팀 신청 가능 (최대 3인)</span></li>
+          <li><span class="li-en">In Seoul on Jun 6–7</span><span class="li-ko">6/6~7 서울 현장 참가 가능</span></li>
+          <li><span class="li-en">Pre-learning done by Jun 5</span><span class="li-ko">6/5까지 사전학습 완료</span></li>
+        </ul>
+      </div>
+      <div class="eligibility-col cannot">
+        <h3>Not for this round</h3>
+        <div class="eligibility-col-ko">이번 회차 제외</div>
+        <ul>
+          <li><span class="li-en">Korean nationals (separate programs)</span><span class="li-ko">한국 국적자 (별도 프로그램 운영)</span></li>
+          <li><span class="li-en">Cannot attend in person Jun 6–7</span><span class="li-ko">6/6~7 오프라인 참가 불가</span></li>
+          <li><span class="li-en">Not currently enrolled in a Korean university</span><span class="li-ko">한국 대학 미재학</span></li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="process-grid">
+      <div class="process-step">
+        <div class="process-num">01</div>
+        <div class="process-title">Submit Form</div>
+        <div class="process-title-ko">신청서 작성</div>
+        <div class="process-desc">5 min · who you are, why, idea (if any).</div>
+        <div class="process-desc-ko">5분 · 소개 · 신청 이유 · 아이디어(있으면).</div>
+      </div>
+      <div class="process-step">
+        <div class="process-num">02</div>
+        <div class="process-title">Confirmation</div>
+        <div class="process-title-ko">참가 확정</div>
+        <div class="process-desc">Email + LMS link within 48 hours.</div>
+        <div class="process-desc-ko">48시간 안 이메일 + LMS 링크.</div>
+      </div>
+      <div class="process-step">
+        <div class="process-num">03</div>
+        <div class="process-title">Pre-Learning</div>
+        <div class="process-title-ko">사전학습</div>
+        <div class="process-desc">3 modules · I · M · P · finish by Jun 5.</div>
+        <div class="process-desc-ko">3개 모듈 · 신청 즉시 시작 · 6/5까지 자율 완료.</div>
+      </div>
+      <div class="process-step">
+        <div class="process-num">04</div>
+        <div class="process-title">Show Up</div>
+        <div class="process-title-ko">현장 참가</div>
+        <div class="process-desc">Jun 6 · 12:45 · GSC Lounge · laptop + 1 problem you've noticed.</div>
+        <div class="process-desc-ko">6/6 12:45 GSC라운지 · 노트북 + 평소 신경 쓰인 문제 하나.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── FAQ ── -->
+<section id="faq">
+  <div class="container">
+    <div class="section-header">
+      <div class="section-label">FAQ · 자주 묻는 질문</div>
+      <div class="section-header-divider"></div>
+      <h2>Questions worth answering<br>before you apply.</h2>
+      <h3>신청 전에 한 번쯤 궁금한 10가지</h3>
+    </div>
+    <div class="faq-list">
+      <div class="faq-item">
+        <div class="faq-header">
+          <div>
+            <div class="faq-q">Do I need a startup idea to apply?</div>
+            <div class="faq-q-ko">아이디어 없어도 신청할 수 있나요?</div>
+          </div>
+          <div class="faq-icon">+</div>
+        </div>
+        <div class="faq-answer"><div class="faq-answer-inner">
+          <p>No. Most accepted applicants come in with a vague observation, not a polished idea.</p>
+          <p class="ko">필요 없습니다. 합격자 다수가 막연한 관찰만 들고 옵니다.</p>
+        </div></div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-header">
+          <div>
+            <div class="faq-q">Do you match me with a team?</div>
+            <div class="faq-q-ko">팀 매칭해주는 프로그램인가요?</div>
+          </div>
+          <div class="faq-icon">+</div>
+        </div>
+        <div class="faq-answer"><div class="faq-answer-inner">
+          <p>No. This is an <strong>individual-first</strong> program, but pre-formed 2–3 person teams are welcome to apply together.</p>
+          <p class="ko"><strong>개인 중심</strong> 프로그램이지만, 2~3인 팀으로 사전 그룹 신청도 가능합니다.</p>
+        </div></div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-header">
+          <div>
+            <div class="faq-q">Do I need Korean?</div>
+            <div class="faq-q-ko">한국어 못해도 괜찮나요?</div>
+          </div>
+          <div class="faq-icon">+</div>
+        </div>
+        <div class="faq-answer"><div class="faq-answer-inner">
+          <p>No. 100% English — LMS, lectures, coach rounds, materials.</p>
+          <p class="ko">괜찮습니다. LMS · 강의 · 코칭 · 자료 전부 영어 진행.</p>
+        </div></div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-header">
+          <div>
+            <div class="faq-q">Do I need coding skills?</div>
+            <div class="faq-q-ko">코딩 못해도 되나요?</div>
+          </div>
+          <div class="faq-icon">+</div>
+        </div>
+        <div class="faq-answer"><div class="faq-answer-inner">
+          <p>No. Claude, Lovable, and Canva AI handle the build side. We teach you the prompts and patterns.</p>
+          <p class="ko">됩니다. Claude · Lovable · Canva AI가 빌드를 책임집니다. 프롬프트와 패턴을 알려드려요.</p>
+        </div></div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-header">
+          <div>
+            <div class="faq-q">Is this a startup-visa program?</div>
+            <div class="faq-q-ko">창업비자 받으려고 가는 거 맞나요?</div>
+          </div>
+          <div class="faq-icon">+</div>
+        </div>
+        <div class="faq-answer"><div class="faq-answer-inner">
+          <p>Startup-first, visa-aware. D-8-4 (OASIS) is one realistic outcome. You'll get an honest read on your current standing.</p>
+          <p class="ko">창업이 먼저, 비자는 결과 경로의 하나. D-8-4 OASIS 외에 D-8 · E-7도 솔직하게 다룹니다.</p>
+        </div></div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-header">
+          <div>
+            <div class="faq-q">What is OASIS?</div>
+            <div class="faq-q-ko">OASIS가 뭔가요?</div>
+          </div>
+          <div class="faq-icon">+</div>
+        </div>
+        <div class="faq-answer"><div class="faq-answer-inner">
+          <p>The Korean government's point system for the D-8-4 startup-immigration visa. 60+ points required. The Prototyping module (P) walks you through scoring yourself.</p>
+          <p class="ko">D-8-4 창업이민비자 점수제. 60점 이상 필요. 사전학습 P 모듈에서 본인 점수 직접 매겨봅니다.</p>
+        </div></div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-header">
+          <div>
+            <div class="faq-q">Is there a participation fee?</div>
+            <div class="faq-q-ko">참가비 있나요?</div>
+          </div>
+          <div class="faq-icon">+</div>
+        </div>
+        <div class="faq-answer"><div class="faq-answer-inner">
+          <p>Zero. Fully sponsored — meals on Jun 6 and GSC Lounge venue included. Just bring your laptop.</p>
+          <p class="ko">전액 무료. 6/6 식사 · GSC 라운지 장소 포함. 노트북만 챙기세요.</p>
+        </div></div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-header">
+          <div>
+            <div class="faq-q">Is accommodation provided? Is this an overnight stay?</div>
+            <div class="faq-q-ko">숙박 제공되나요? 1박 프로그램인가요?</div>
+          </div>
+          <div class="faq-icon">+</div>
+        </div>
+        <div class="faq-answer"><div class="faq-answer-inner">
+          <p><strong>No overnight stay.</strong> The program runs across 2 days but isn't a sleepover. Day 1 ends at 22:00, Day 2 starts at 09:00 the next morning — you go home (or to your own place) in between. Happy to recommend budget hotels near GSC Lounge if you're traveling in from outside Seoul.</p>
+          <p class="ko"><strong>숙박은 제공되지 않습니다.</strong> 2일에 걸쳐 진행되지만 자고 가는 프로그램이 아니에요. Day 1은 22시에 끝나고, Day 2는 다음 날 9시에 시작합니다 — 그 사이에는 집(또는 본인 숙소)으로 돌아가시면 됩니다. 서울 외 지역에서 오시면 GSC 라운지 근처 저렴한 숙박 추천 가능해요.</p>
+        </div></div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-header">
+          <div>
+            <div class="faq-q">What if I'm not sure my idea fits?</div>
+            <div class="faq-q-ko">제 아이디어가 예시 4가지에 안 맞아도 되나요?</div>
+          </div>
+          <div class="faq-icon">+</div>
+        </div>
+        <div class="faq-answer"><div class="faq-answer-inner">
+          <p>The 4 examples are reference patterns, not a checklist. Your model can look completely different — Day 1 is where you find yours.</p>
+          <p class="ko">4가지 예시는 참고용 패턴일 뿐, 꼭 이 중 하나여야 한다는 뜻은 아닙니다. 본인만의 모델은 Day 1에 찾습니다.</p>
+        </div></div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-header">
+          <div>
+            <div class="faq-q">What if I can't attend in person?</div>
+            <div class="faq-q-ko">오프라인 참가가 어려우면요?</div>
+          </div>
+          <div class="faq-icon">+</div>
+        </div>
+        <div class="faq-answer"><div class="faq-answer-inner">
+          <p>This round is offline-only. Online edition under consideration for late 2026 — apply anyway and leave a note.</p>
+          <p class="ko">이번 회차는 오프라인 전용. 2026년 하반기 온라인 회차 검토 중 — 신청서에 메모 남겨주세요.</p>
+        </div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── FINAL CTA ── -->
+<section class="cta-final">
+  <h2>Two markets. AI. A visa.<br>Apply in 5 minutes.</h2>
+  <div class="cta-sub">두 시장 · AI · 창업비자 — 5분이면 신청 끝납니다.</div>
+  <div class="cta-final-meta">
+    <span><strong>Apply by</strong> Jun 2</span>
+    <span><strong>Hackathon</strong> Jun 6–7</span>
+    <span><strong>Spots</strong> ~30</span>
+    <span><strong>Cost</strong> Free</span>
+  </div>
+  <a class="btn-white" href="https://docs.google.com/forms/d/e/1FAIpQLSeZpjGO9kVO0KTAtm_PHzOQd4KMxUmWIuwW8BLGFvf7UmBFpA/viewform" target="_blank" rel="noopener">Apply Now · 신청하기 →</a>
+</section>
+
+<!-- ── FOOTER ── -->
+<footer class="footer">
+  <div class="footer-inner">
+    <div>
+      <div class="footer-brand-name">K×CROSSBORDER</div>
+      <div class="footer-tagline">
+        Hackathon for international students with AI.<br>
+        외국인 유학생을 위한 AI 솔로프러너 해커톤.
+      </div>
+      <div class="footer-host">Host · <strong>underdogs</strong> 언더독스</div>
+      <div class="footer-host">Platform · <strong>UD IMPACT</strong> · Action AI BOOST</div>
+      <div class="footer-host">Venue · <strong>GSC Lounge</strong> · Seoul · 서울</div>
+    </div>
+    <div class="footer-col">
+      <div class="footer-col-title">Program</div>
+      <ul>
+        <li><a href="#why">Why</a></li>
+        <li><a href="#who">Who</a></li>
+        <li><a href="#examples">Examples</a></li>
+        <li><a href="#roadmap">Roadmap</a></li>
+        <li><a href="#schedule">Schedule</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <div class="footer-col-title">Apply</div>
+      <ul>
+        <li><a href="#apply">Eligibility · 자격</a></li>
+        <li><a href="#apply">Process · 신청 절차</a></li>
+        <li><a href="#faq">FAQ</a></li>
+        <li><a href="https://docs.google.com/forms/d/e/1FAIpQLSeZpjGO9kVO0KTAtm_PHzOQd4KMxUmWIuwW8BLGFvf7UmBFpA/viewform" target="_blank" rel="noopener" style="color:var(--action-orange); font-weight:700;">Apply by Jun 2 → 신청</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <span>© 2026 underdogs × UD IMPACT · K-Crossborder Hackathon</span>
+    <span>actionai.asia · Seoul, Korea</span>
+  </div>
+</footer>
+
+<script>
+  const nav = document.getElementById('nav');
+  window.addEventListener('scroll', () => {
+    if (window.scrollY > 50) nav.classList.add('scrolled');
+    else nav.classList.remove('scrolled');
+  });
+  document.querySelectorAll('.faq-item').forEach(item => {
+    item.addEventListener('click', () => item.classList.toggle('open'));
+  });
+</script>
+
+<!-- ── INLINE EDITOR SYSTEM ── -->
+
+
+<!-- Edit Mode Controls -->
+
+
+
+
+
+
+
+
+
+
+
+
+</body></html>
